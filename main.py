@@ -5,5 +5,6 @@ imdb = imdb['Rank & Title'].str.extract('[0-9]+(.*)')[0].str.rsplit(' ',1,expand
 
 nf = pd.read_html('https://www.finder.com.au/netflix-movies')[0]
 
-print(set(nf.Title).intersection(set(imdb)))
+for p in set(nf.Title).intersection(set(imdb)):
+    print(p)
 
